@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", system-ui, -apple-system, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  --color-softland-navy: #1f3d76;
+  --color-softland-blue: #2d71a1;
+  --color-softland-sky: #3db3c5;
+  --color-softland-light: #f4f8fb;
+  --color-softland-heading: #1c2d42;
+  --color-softland-body: #444444;
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  color: #444444;
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+@keyframes waveMove1 {
+  0% {
+    transform: translate3d(85px, 0, 0);
+  }
+  100% {
+    transform: translate3d(-90px, 0, 0);
+  }
+}
+
+@keyframes waveMove2 {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+@keyframes waveMove3 {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+.hero-wave-1 {
+  animation: waveMove1 10s linear infinite;
+  animation-delay: -2s;
+}
+
+.hero-wave-2 {
+  animation: waveMove2 8s linear infinite;
+  animation-delay: -2s;
+}
+
+.hero-wave-3 {
+  animation: waveMove3 6s linear infinite;
+  animation-delay: -2s;
+}
+
+@keyframes phoneFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.phone-float-slow {
+  animation: phoneFloat 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .hero-wave-1,
+  .hero-wave-2,
+  .hero-wave-3,
+  .phone-float-slow {
+    animation: none !important;
+  }
+}
